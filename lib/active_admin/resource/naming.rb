@@ -10,9 +10,9 @@ module ActiveAdmin
 
       # Returns the plural version of the user facing name. Example: "Bank Accounts"
       def plural_resource_name
-        @plural_resource_name ||= @options[:as].pluralize if @options[:as]
-        @plural_resource_name ||= plural_human_name
-        @plural_resource_name ||= resource_name.pluralize
+        plural_resource_name ||= @options[:as].pluralize if @options[:as]
+        plural_resource_name ||= plural_human_name
+        plural_resource_name ||= resource_name.pluralize
       end
 
       # A name used internally to uniquely identify this resource
